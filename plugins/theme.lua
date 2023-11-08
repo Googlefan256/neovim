@@ -1,8 +1,8 @@
 local function config()
 	require("everforest").setup({
-    background = 'hard'
-  })
-  vim.cmd([[colorscheme everforest]])
+		background = "hard",
+	})
+	vim.cmd([[colorscheme everforest]])
 end
 
 return {

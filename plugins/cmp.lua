@@ -48,6 +48,6 @@ return {
 		"hrsh7th/vim-vsnip",
 	},
 	config = config,
-  lazy = true,
-  event = 'InsertEnter'
+	lazy = true,
+	event = "InsertEnter",
 }
