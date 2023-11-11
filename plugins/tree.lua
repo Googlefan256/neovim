@@ -23,6 +23,7 @@ local function config()
 		},
 		filters = {
 			dotfiles = true,
+			git_ignored = false,
 		},
 		on_attach = tree_on_attach,
 	})
@@ -35,4 +36,6 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = config,
+	lazy = true,
+	event = "VimEnter",
 }

@@ -9,6 +9,7 @@ local function config()
 			null_ls.builtins.formatting.prettierd, -- javascript formatter
 			null_ls.builtins.formatting.eslint_d, -- javascript linter
 			null_ls.builtins.formatting.rustfmt, -- rust formatter
+			null_ls.builtins.formatting.stylua, -- lua formatter
 		},
 	})
 end
