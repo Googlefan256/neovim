@@ -44,6 +44,8 @@ local function config()
 			"lua_ls",
 			"rust_analyzer",
 			"gopls",
+			"tsserver",
+			"eslint",
 		},
 	})
 
@@ -51,6 +53,8 @@ local function config()
 	require("lspconfig").lua_ls.setup({})
 	require("lspconfig").rust_analyzer.setup({})
 	require("lspconfig").gopls.setup({})
+	require("lspconfig").tsserver.setup({})
+	require("lspconfig").eslint.setup({})
 	require("lspconfig.ui.windows").default_options.border = "single"
 	lspconfig()
 end

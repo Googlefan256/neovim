@@ -6,6 +6,9 @@ local function config()
 			null_ls.builtins.formatting.isort, -- python import sort
 			null_ls.builtins.diagnostics.flake8, -- python linter
 			null_ls.builtins.formatting.stylua, -- lua formatter
+			null_ls.builtins.formatting.prettierd, -- javascript formatter
+			null_ls.builtins.formatting.eslint_d, -- javascript linter
+			null_ls.builtins.formatting.rustfmt, -- rust formatter
 		},
 	})
 end
