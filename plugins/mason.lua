@@ -9,11 +9,6 @@ local function lspconfig()
 	vim.api.nvim_create_autocmd("LspAttach", {
 		group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 		callback = function(ev)
-			-- Enable completion triggered by <c-x><c-o>
-			vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-			-- Buffer local mappings.
-			-- See `:help vim.lsp.*` for documentation on any of the below functions
 			local opts = { buffer = ev.buf }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -31,32 +26,33 @@ local function lspconfig()
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 			vim.keymap.set("n", "<space>f", function()
 				vim.lsp.buf.format({ async = true })
-			end, opts)
-		end,
-	})
+			end, opts) end, })
 end
 
 local function config()
 	require("mason").setup()
-	require("mason-lspconfig").setup({
-		ensure_installed = {
-			"pyright",
-			"lua_ls",
-			"rust_analyzer",
-			"gopls",
-			"tsserver",
-			"eslint",
-		},
+	require("mason-lspconfig").setup_handlers({
+		function(server)
+			local opt = {
+				capabilities = require("cmp_nvim_lsp").default_capabilities(
+					vim.lsp.protocol.make_client_capabilities()
+				),
+			}
+			require("lspconfig")[server].setup(opt)
+		end,
 	})
-
-	require("lspconfig").pyright.setup({})
-	require("lspconfig").lua_ls.setup({})
-	require("lspconfig").rust_analyzer.setup({})
-	require("lspconfig").gopls.setup({})
-	require("lspconfig").tsserver.setup({})
-	require("lspconfig").eslint.setup({})
 	require("lspconfig.ui.windows").default_options.border = "single"
 	lspconfig()
+  require("mason-lspconfig").setup({
+    ensecure_installed = {
+      "pyright",
+      "eslint",
+      "tsserver",
+      "lua-ls",
+      "stylua",
+      "gopls",
+    }
+  })
 end
 
 return {
