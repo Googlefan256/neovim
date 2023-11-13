@@ -1,3 +1,3 @@
 return {
-  "4513ECHO/vim-snipewin",
+	"4513ECHO/vim-snipewin",
 }

@@ -1,6 +1,7 @@
 local function config()
 	local nls = require("null-ls")
 	nls.setup({
+		diagnostics_format = "#{m} (#{s}: #{c})",
 		sources = {
 			nls.builtins.formatting.stylua,
 			nls.builtins.formatting.gofmt,
@@ -19,10 +20,10 @@ local function config()
 			}),
 			nls.builtins.formatting.shfmt,
 			nls.builtins.formatting.biome.with({
-        condition = function(utils)
-          return utils.has_file({ "biome.json" })
-        end,
-      }),
+				condition = function(utils)
+					return utils.has_file({ "biome.json" })
+				end,
+			}),
 		},
 	})
 end

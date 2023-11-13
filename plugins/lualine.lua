@@ -1,6 +1,12 @@
 local function config()
 	require("lualine").setup({
-		options = { theme = "everforest" },
+		options = {
+			theme = require("../theme").name,
+			icons_enabled = true,
+			section_separators = { left = "", right = "" },
+			component_separators = { left = "", right = "" },
+			disabled_filetypes = {},
+		},
 	})
 end
 
