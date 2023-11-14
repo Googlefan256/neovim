@@ -1,10 +1,10 @@
-local tokyo = require("./theme/tokyo")
-local onedark = require("./theme/onedark")
-local dracula = require("./theme/dracula")
-local apprentice = require("./theme/apprentice")
-local everforest = require("./theme/everforest")
-local papercolor = require("./theme/papercolor")
-local solarized = require("./theme/solarized")
+local tokyo = require("ggfn/theme/tokyo")
+local onedark = require("ggfn/theme/onedark")
+local dracula = require("ggfn/theme/dracula")
+local apprentice = require("ggfn/theme/apprentice")
+local everforest = require("ggfn/theme/everforest")
+local papercolor = require("ggfn/theme/papercolor")
+local solarized = require("ggfn/theme/solarized")
 local deps = {
 	tokyo.repo,
 	apprentice.repo,

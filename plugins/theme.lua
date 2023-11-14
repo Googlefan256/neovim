@@ -1,12 +1,12 @@
 local function config()
-	local theme = require("../theme").name
+	local theme = require("ggfn/theme").name
 	vim.cmd("colorscheme " .. theme)
-	require("../theme").config()
+	require("ggfn/theme").config()
 end
 
 return {
-	require("../theme").repo,
-	dependencies = require("../theme").dependencies,
+	require("ggfn/theme").repo,
+	dependencies = require("ggfn/theme").dependencies,
 	lazy = false,
 	priority = 1000,
 	config = config,
