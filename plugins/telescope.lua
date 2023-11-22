@@ -1,5 +1,5 @@
 local function config()
-	vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+	vim.api.nvim_set_keymap("n", "<leader>te", ":NvimTreeToggle<CR>", { silent = true })
 	require("telescope").load_extension("file_browser")
 	vim.api.nvim_set_keymap("n", "<space>ff", ":Telescope file_browser<CR>", { noremap = true })
 	require("telescope").setup({

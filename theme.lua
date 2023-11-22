@@ -6,20 +6,20 @@ local everforest = require("ggfn/theme/everforest")
 local papercolor = require("ggfn/theme/papercolor")
 local solarized = require("ggfn/theme/solarized")
 local deps = {
-	tokyo.repo,
-	apprentice.repo,
-	everforest.repo,
-	papercolor.repo,
-	solarized.repo,
-	dracula.repo,
-	onedark.repo,
+  tokyo.repo,
+  apprentice.repo,
+  everforest.repo,
+  papercolor.repo,
+  solarized.repo,
+  dracula.repo,
+  onedark.repo,
 }
 
-local current = papercolor
+local current = dracula
 
 return {
-	dependencies = deps,
-	name = current.name,
-	repo = current.repo,
-	config = current.config or function() end,
+  dependencies = deps,
+  name = current.name,
+  repo = current.repo,
+  config = current.config or function() end,
 }

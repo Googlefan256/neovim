@@ -8,7 +8,7 @@ local function config()
 			group_empty = true,
 		},
 		filters = {
-			dotfiles = true,
+			dotfiles = false,
 			git_ignored = false,
 		},
 		diagnostics = {

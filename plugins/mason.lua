@@ -33,7 +33,9 @@ local function config()
 			if server == "tsserver" then
 				opt.root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
 			elseif server == "eslint-lsp" then
-				opt.root_dir = nvim_lsp.util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc")
+				opt.single_file_support = false
+				opt.root_dir =
+					nvim_lsp.util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc", ".eslintrc.cjs")
 			elseif server == "denols" then
 				opt.root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json")
 				opt.init_options = {
@@ -49,11 +51,13 @@ local function config()
 						},
 					},
 				}
+			elseif server == "biome" then
+				opt.single_file_support = false
+				opt.root_dir = nvim_lsp.util.root_pattern("biome.json")
 			end
 			nvim_lsp[server].setup(opt)
 		end,
 	})
-	require("lspconfig.ui.windows").default_options.border = "single"
 end
 
 return {

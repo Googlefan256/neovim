@@ -22,6 +22,8 @@ local function config()
 			"rust",
 			"sql",
 			"typescript",
+			"markdown",
+			"markdown_inline",
 		},
 		autotag = {
 			enable = true,
